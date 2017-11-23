@@ -11,32 +11,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { MyAppHeaderText } from './MyAppHeaderText';
-import {
-  StackNavigator,
-} from 'react-navigation';
-
-class HomeScreen extends Component {
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-        <Button
-        title="Go to Jane's profile"
-        onPress={() =>
-          navigate('Profile', { name: 'Jane' })
-        }
-      />
-    );
-  }
-}
-
-class ProfileScreen extends Component {
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-      <Text>Jane's profile butt.</Text>
-    );
-  }
-}
 
 class Greeting extends Component {
   render() {
@@ -64,10 +38,8 @@ function onPressLearnMore () {
 
 export default class App extends Component {
   render() {
-    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <HomeScreen />
         <View style={styles.buttonRow}>
           <View style={{flex: 1, marginHorizontal: 12}}>
             <Button
@@ -120,12 +92,6 @@ export default class App extends Component {
     );
   }
 }
-
-const App1 = StackNavigator({
-  App: { screen: App },
-  Home: { screen: HomeScreen },
-  Profile: { screen: ProfileScreen },
-});
 
 const styles = StyleSheet.create({
   menuButtons: {
