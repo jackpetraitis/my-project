@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { 
+import {
+  Button, 
   CameraRoll,
   Image,
   SliderIOS, 
@@ -31,26 +32,85 @@ class Banana extends Component {
   }
 }
 
+function onPressLearnMore () {
+  return;
+};
+
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Banana />
-        <Text>Open up App.js to start working on  <Text style={{color:'red'}}>nested text in</Text> your app!</Text>
-        <Text>Changes you make will automatically BLAZINGLY FAST reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Greeting name='Rexxar' />
-        <Greeting name='Jaina' />
+        <View style={styles.buttonRow}>
+          <View style={{flex: 1, marginHorizontal: 12}}>
+            <Button
+              onPress={onPressLearnMore}
+              style={styles.menuButtons}
+              title="Macros/Micros"
+              color="#DDD"
+              accessibilityLabel="Macros Micros"
+            />
+          </View>
+          <View style={{flex: 1, marginHorizontal: 12}}>
+            <Button
+              onPress={onPressLearnMore}
+              style={styles.menuButtons}
+              title="Scanning"
+              color="#DDD"
+              accessibilityLabel="Scanning"
+            />
+          </View>
+        </View>
+        <View style={styles.buttonRow}>
+          <View style={{flex: 1, marginHorizontal: 12}}>
+            <Button
+              onPress={onPressLearnMore}
+              style={styles.menuButtons}
+              title="Meal Suggestions"
+              color="#DDD"
+              accessibilityLabel="Meals"
+            />
+          </View>
+          <View style={{flex: 1, marginHorizontal: 12}}>
+            <Button
+              onPress={onPressLearnMore}
+              style={styles.menuButtons}
+              title="About"
+              color="#DDD"
+              accessibilityLabel="About"
+            />
+          </View>
+        </View>
+        <View style={styles.newcontainer}>
+          <Banana />
+          <Text>Open up App.js to start working on  <Text style={{color:'red'}}>nested text in</Text> your app!</Text>
+          <Text>Changes you make will automatically BLAZINGLY FAST reload.</Text>
+          <Text>Shake your phone to open the developer menu.</Text>
+          <Greeting name='Rexxar' />
+          <Greeting name='Jaina111' />
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  menuButtons: {
+    marginHorizontal: 12
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    margin: 12
+  },
+  Button: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    margin: 12
+  },
   row: {
     flexDirection: 'row',
-    flex: 1,
+    flex: 1
   },
   url: {
     fontSize: 9,
@@ -62,10 +122,12 @@ const styles = StyleSheet.create({
   info: {
     flex: 1,
   },
+  newcontainer: {
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
