@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { 
+  CameraRoll,
+  Image,
+  SliderIOS, 
+  StyleSheet, 
+  Switch, 
+  Text, 
+  View,
+  TouchableOpacity
+} from 'react-native';
 import { MyAppHeaderText } from './MyAppHeaderText';
+
 
 class Greeting extends Component {
   render() {
@@ -26,7 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Banana></Banana>
+        <Banana />
         <Text>Open up App.js to start working on  <Text style={{color:'red'}}>nested text in</Text> your app!</Text>
         <Text>Changes you make will automatically BLAZINGLY FAST reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
@@ -38,6 +48,20 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  url: {
+    fontSize: 9,
+    marginBottom: 14,
+  },
+  image: {
+    margin: 4,
+  },
+  info: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
